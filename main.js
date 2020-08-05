@@ -5,6 +5,7 @@
 const assert = require('assert');
 // brings in the readline module to access the command line
 const readline = require('readline');
+const { exit } = require('process');
 // use the readline module to print out to the command line
 const rl = readline.createInterface({
   input: process.stdin,
@@ -17,6 +18,35 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
+  
+  let hand1Wins = 'Hand one wins!'
+  let hand2Wins = 'Hand two wins!'
+  let tie = 'It\'s a tie!'
+  
+    if (hand1.toLowerCase().trim() == hand2.toLowerCase().trim()){
+      return tie
+    }
+    else if (hand1.toLowerCase().trim() == 'rock' && hand2.toLowerCase().trim() == 'paper'){
+      return hand2Wins
+    } 
+    else if (hand1.toLowerCase().trim() == 'paper' && hand2.toLowerCase().trim() == 'scissors'){
+      return hand2Wins
+    } 
+    else if (hand1.toLowerCase().trim() == 'scissors' && hand2.toLowerCase().trim() == 'rock'){
+      return hand2Wins
+    } 
+    else if (hand1.toLowerCase().trim() == 'rock' && hand2.toLowerCase().trim() == 'scissors'){
+      return hand1Wins
+    }
+    else if (hand1.toLowerCase().trim() == 'paper' && hand2.toLowerCase().trim() == 'rock'){
+      return hand1Wins
+    }
+    else if (hand1.toLowerCase().trim() ==  'scissors' && hand2.toLowerCase().trim() == 'paper'){
+      return hand1Wins
+    }
+    else {
+      return 'invalid selection'
+    }
 }
 
 // the first function called in the program to get an input from the user
