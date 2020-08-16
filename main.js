@@ -84,6 +84,25 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
   });
+
+
+  //RPS test creation assignment
+  //Create a couple of test cases for RPS
+
+  if(typeof describe === 'function'){
+    describe('RPS TESTS', () => {
+      it('should evaluate same words as a tie even if they are not rock, paper or scissors', () => {
+        assert.equal(rockPaperScissors('rack', 'rack'), "It's a tie!");
+        assert.equal(rockPaperScissors('poppers', 'poppers'), "It's a tie!");
+        assert.equal(rockPaperScissors('spices', 'spices'), "It's a tie!");
+      });
+      it('Evaluate totally different words as invalid selection', () => {
+        assert.equal(rockPaperScissors('rocket', 'cat'), "invalid selection");
+        assert.equal(rockPaperScissors('poppers', 'screen'), "invalid selection");
+        assert.equal(rockPaperScissors('spices', 'dog'), "invalid selection");
+      });
+    })
+  }
 } else {
 
   // always returns ask the user for another input
